@@ -6,8 +6,10 @@ const popupModalImgElm = document.querySelector(".popup_modal_img")
 
 const closeElm = document.querySelector(".close")
 closeElm.addEventListener("click",()=>{
-  popupModalElm.style.visibility = "visible"
-  popupModalElm.style.opacity = "1"
+  popupModalElm.style.visibility = "hidden"
+  popupModalElm.style.opacity = "0"
+  popupModalImgElm.style.transform = "scale(0)"
+  document.body.style.overflow  = "scroll"
 })
 
 popupImgElm.map((item) => {
@@ -17,8 +19,8 @@ popupImgElm.map((item) => {
     popupModalElm.style.display = "flex"
     popupModalImgElm.style.transform = "scale(1.8)"
     popupModalImgElm.style.transition = "0.4s"
-    // popupModalImgElm.style.visibility = "visible"
-    // popupModalImgElm.style.opacity = "1"
+    popupModalElm.style.visibility = "visible"
+    popupModalElm.style.opacity = "1"
     document.body.style.overflow  = "hidden"
   })
 
